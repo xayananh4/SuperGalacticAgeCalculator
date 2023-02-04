@@ -3,11 +3,13 @@ import{Age}  from './../src/age.js';
 describe('Age', () => {
 
     test('should return the user date of birth', () => {
-    const userAge = new Age('July 14, 1984 01:01:01');
-    expect(userAge.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
+    const userDob = new Age('July 14, 1984 01:01:01');
+    expect(userDob.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
   });
 
-  test('should return age in years for the user', () => {
+  test('should return the user age in years', () => {
+    
+
 
   });
 
