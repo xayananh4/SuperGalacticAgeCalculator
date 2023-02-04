@@ -15,7 +15,9 @@ export class Age {
     return age;
   }
 
-  convertAgeToDays(age) {
- 
-    }
+  convertAgeToDays(userDateOfBirth) {    
+    let numberOfDays = this.getUserAgeInYears(userDateOfBirth) * 365;
+    console.log(numberOfDays);
+    return numberOfDays;
+  }
 }

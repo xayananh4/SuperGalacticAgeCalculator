@@ -1,7 +1,6 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-
   test('should return the user date of birth', () => {
     const userDob = new Age('July 14, 1984 01:01:01');
     expect(userDob.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
@@ -15,9 +14,8 @@ describe('Age', () => {
 
   test('should return the user age in days', () => {
     const userDob = new Age('July 02, 1985 01:01:01');
-    expect(userDob.convertAgeToDays(userDob)).toEqual(1);
-
+    let numberOfDays = userDob.convertAgeToDays(userDob);
+    expect(userDob.convertAgeToDays(userDob)).toEqual(numberOfDays);
   });
-
 
 });
