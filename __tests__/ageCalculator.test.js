@@ -8,8 +8,8 @@ describe('Age', () => {
   });
 
   test('should return the user age in years', () => {
-    
-
+    const userDob = new Age('July 14, 1984 01:01:01');
+    expect(userDob.getUserAgeInYears(userDob)).toEqual(38);
 
   });
 
