@@ -1,7 +1,9 @@
 export class Age {
 
-  constructor(MD,YYYY,TimeOfBirth) {
-   
+  constructor(MonthAndDate,Year,TimeOfBirth) {
+    this.MonthAndDate = MonthAndDate;
+    this.Year = Year;
+    this.TimeOfBirth = TimeOfBirth; 
   }
 
 
