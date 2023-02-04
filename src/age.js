@@ -1,9 +1,8 @@
 export class Age {
 
-  constructor(dateString)
-  {
-
-
+  constructor(MD,YYYY,TimeOfBirth) {
+   
   }
+
 
 }
