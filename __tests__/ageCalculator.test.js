@@ -1,10 +1,10 @@
-import Age from './../src/age.js';
+import{Age}  from './../src/age.js';
 
 describe('Age', () => {
 
-  test('should return a user age', () => {
+  test('should return a age for the user', () => {
     const userAge = new Age(7,14,1984);
-    expect(returnUserAge()).toEqual(userAge);
+    expect(userAge).toEqual(38);
 
   });
 });
