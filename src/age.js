@@ -1,8 +1,8 @@
 export class Age {
 
   constructor(dateOfBirth) {
-    this.userDateOfBirth = dateOfBirth;
-    this.allThePlanets = ["earth", "mercury", "venus", "mars", "jupiter"];
+    // this.userDateOfBirth = dateOfBirth;
+    // this.allThePlanets = ["earth", "mercury", "venus", "mars", "jupiter"];
 
   }
 
@@ -24,9 +24,7 @@ export class Age {
   }
 
   getSolarPlant(planet) {
-
     for (let i = 0; i < this.allThePlanets.length; i++) {
-
       if (this.allThePlanets[i] === planet) {
         return planet;
       }
