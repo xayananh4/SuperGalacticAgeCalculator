@@ -18,4 +18,10 @@ describe('Age', () => {
     expect(userDob.convertAgeToDays(userDob)).toEqual(numberOfDays);
   });
 
+    test('should return a solar planet', () => {
+    const userAge = new Age('July 02, 1985 01:01:01'); 
+    expect(userAge.getSolarPlant()).toEqual('mercury');
+  });
+
+
 });

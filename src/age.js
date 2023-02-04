@@ -2,6 +2,8 @@ export class Age {
 
   constructor(dateOfBirth) {
     this.userDateOfBirth = dateOfBirth;
+    this.allThePlanets = ['earth', 'mercury', 'venus', 'mars', 'jupiter']
+
   }
 
   getUserAgeInYears(userDateOfBirth) {
@@ -15,9 +17,13 @@ export class Age {
     return age;
   }
 
-  convertAgeToDays(userDateOfBirth) {    
+  convertAgeToDays(userDateOfBirth) {
     let numberOfDays = this.getUserAgeInYears(userDateOfBirth) * 365;
     console.log(numberOfDays);
     return numberOfDays;
+  }
+
+  getSolarPlant(planet) {
+
   }
 }
