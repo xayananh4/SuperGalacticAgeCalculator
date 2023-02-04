@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Triangle from './triangle.js';
+import Triangle from './age.js';
 function handleTriangleForm() {
   event.preventDefault();
   document.querySelector('#response').innerText = null;
