@@ -19,7 +19,7 @@ export class Age {
     };
     for (let element in daysInYear) {
       if (element === planet) {
-        numberOfDays / daysInYear[element];
+        return numberOfDays / daysInYear[element];
       }
     }
   }

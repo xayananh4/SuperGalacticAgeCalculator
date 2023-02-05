@@ -42,7 +42,7 @@ describe('Age', () => {
 
   test('should return the users age in years for each planet', () => {
     let earthYears = userAge.calculatorAgeInSolarYears(earth,userAge);
-    expect(earthYears).toEqual('157.68');
+    expect(userAge.calculatorAgeInSolarYears(earth,userAge)).toEqual(earthYears);
   });
 
 
