@@ -6,10 +6,13 @@ describe('Age', () => {
   let solarPlanet;
 
   beforeEach(() => {
+
+
     userAge = new Age();
     userAge.userDateOfBirth = new Date('January 01, 1967');
     pastBirthday = new Age();
     pastBirthday.userDateOfBirth = new Date('January 01, 1980');
+
 
     solarPlanet = userAge.getSolarPlant();
     earth = solarPlanet[0];
@@ -60,5 +63,11 @@ describe('Age', () => {
   test('should return years since user past birthday', () => {
     expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(years);
   });
+
+  test('should show the years that have pass since user past birthday', () => { 
+    expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(13);
+    console.log(years);   
+  });
+
 
 });
