@@ -1,7 +1,7 @@
 export class Age {
   constructor(dateOfBirth) {
     this.userDateOfBirth = dateOfBirth;
-    this.allThePlanets = ["earth", "mercury", "venus", "mars", "jupiter"];
+    this.allThePlanets = [];
 
   }
 
@@ -41,13 +41,6 @@ export class Age {
   }
 
   getSolarPlant() {
-    new Array(
-      "earth",
-      "mercury",
-      "venus",
-      "mars",
-      "jupiter"
-    );
+    return new Array("earth", "mercury", "venus", "mars", "jupiter");
   }
-
 }

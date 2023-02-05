@@ -29,7 +29,7 @@ describe('Age', () => {
 
   test('should return a solar planet', () => {
     let solarPlanet = userAge.getSolarPlant();
-    expect(solarPlanet).toEqual('earth');
+    expect(solarPlanet[0]).toEqual("earth");
   });
 
 
