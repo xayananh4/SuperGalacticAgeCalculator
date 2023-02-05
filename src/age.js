@@ -45,12 +45,12 @@ export class Age {
     return new Array("earth", "mercury", "venus", "mars", "jupiter");
   }
 
-  calculatorYearsSinceLastBirthday(userAge,pastBirthday) {
-    // let diff = Math.abs(userAge - pastBirthday);
-    // let day = 1000 * 60 * 60 * 24;
-    // let days = Math.floor(diff / day);
-    // let months = Math.floor(days / 31);
-    // let years = Math.ceil(months / 12);
-    // years;
+  calculatorYearsSinceLastBirthday(userAge, pastBirthday) {
+    let diff = Math.abs(userAge - pastBirthday);
+    let day = 1000 * 60 * 60 * 24;
+    let days = Math.floor(diff / day);
+    let months = Math.floor(days / 31);
+    let years = Math.ceil(months / 12);
+    return years;
   }
 }
