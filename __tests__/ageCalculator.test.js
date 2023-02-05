@@ -1,10 +1,19 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userAge;
+  let userAge, earth, mercury, venus, mars, jupiter;
+  let solarPlanet;
 
   beforeEach(() => {
     userAge = new Age('July 14, 1984 01:01:01');
+     solarPlanet = userAge.getSolarPlant();
+    
+    earth = solarPlanet[0];
+    mercury = solarPlanet[1];
+    venus = solarPlanet[2];
+    mars = solarPlanet[3];
+    jupiter = solarPlanet[4];
+
   });
 
   test('should show the user date of birth', () => {
@@ -28,8 +37,7 @@ describe('Age', () => {
   });
 
   test('should return a solar planet', () => {
-    let solarPlanet = userAge.getSolarPlant();
-    expect(solarPlanet[0]).toEqual("earth");
+    expect(solarPlanet[0]).toEqual(earth);
   });
 
 
