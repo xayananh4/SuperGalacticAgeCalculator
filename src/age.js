@@ -7,6 +7,7 @@ export class Age {
   calculatorAgeInSolarYears(planet, age) {
     let daysInYear;
     let numberOfDays;
+    let total;
 
     numberOfDays = this.convertAgeToDays(age);
 
@@ -20,14 +21,18 @@ export class Age {
 
     for (let element in daysInYear) {
       if (element === planet) {
-        return numberOfDays / daysInYear[element];
+
+        total = numberOfDays / daysInYear[element];
+        total;
+        
       }
     }
+    console.log(total);
   }
 
   getUserAgeInYears(userDateOfBirth) {
     let today = new Date();
-    let birthDate = new Date(this.userDateOfBirth);
+    let birthDate = this.userDateOfBirth;
     let age = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
