@@ -1,13 +1,16 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userAge, pastBirthday, earth, mercury, venus, mars, jupiter;
+  let userAge, pastBirthday, years, earth, mercury, venus, mars, jupiter;
   let earthYears, mercuryYears, venusYears, marsYears, jupiterYears;
   let solarPlanet;
 
   beforeEach(() => {
-    userAge = new Age('January 01, 1967');
-    pastBirthday = new Age('January 01, 1980');
+    userAge = new Age();
+    userAge.userDateOfBirth = new Date('January 01, 1967');
+    pastBirthday = new Age();
+    pastBirthday.userDateOfBirth = new Date('January 01, 1980');
+
     solarPlanet = userAge.getSolarPlant();
     earth = solarPlanet[0];
     mercury = solarPlanet[1];
@@ -20,6 +23,7 @@ describe('Age', () => {
     venusYears = userAge.calculatorAgeInSolarYears(venus, userAge);
     marsYears = userAge.calculatorAgeInSolarYears(mars, userAge);
     jupiterYears = userAge.calculatorAgeInSolarYears(jupiter, userAge);
+    years = userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth);
 
   });
 
@@ -54,15 +58,7 @@ describe('Age', () => {
   });
 
   test('should return years since user past birthday', () => {
-    expect(userAge.calculatorYearsSinceLastBirthday(pastBirthday, userAge)).toEqual(13);
-
+    expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(years);
   });
-
-
-
-
-
-
-
 
 });
