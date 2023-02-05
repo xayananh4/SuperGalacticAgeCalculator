@@ -1,18 +1,16 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userAge, pastBirthday, years, earth, mercury, venus, mars, jupiter;
+  let userAge, pastBirthday, years;
+  let earth, mercury, venus, mars, jupiter;
   let earthYears, mercuryYears, venusYears, marsYears, jupiterYears;
   let solarPlanet;
 
   beforeEach(() => {
-
-
     userAge = new Age();
     userAge.userDateOfBirth = new Date('January 01, 1967');
     pastBirthday = new Age();
     pastBirthday.userDateOfBirth = new Date('January 01, 1980');
-
 
     solarPlanet = userAge.getSolarPlant();
     earth = solarPlanet[0];
@@ -31,7 +29,7 @@ describe('Age', () => {
   });
 
   test('should show the user date of birth', () => {
-    expect(userAge.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
+    expect(userAge.userDateOfBirth).toEqual('July 14, 1984');
     console.log(userAge);
   });
 
