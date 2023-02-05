@@ -1,9 +1,27 @@
 export class Age {
-
   constructor(dateOfBirth) {
     this.userDateOfBirth = dateOfBirth;
     this.allThePlanets = ["earth", "mercury", "venus", "mars", "jupiter"];
 
+  }
+
+  calculatorAgeInSolarYears(planet, age) {
+    let daysInYear;
+    let numberOfDays;
+
+    numberOfDays = this.convertAgeToDays(age);
+    daysInYear = {
+      "earth": 365,
+      "mercury": 88,
+      "venus": 224,
+      "mars": 687,
+      "jupiter": 4332
+    };
+    for (let element in daysInYear) {
+      if (element === planet) {
+        return numberOfDays / daysInYear[element];
+      }
+    }
   }
 
   getUserAgeInYears(userDateOfBirth) {
@@ -19,16 +37,17 @@ export class Age {
 
   convertAgeToDays(userDateOfBirth) {
     let numberOfDays = this.getUserAgeInYears(userDateOfBirth) * 365;
-    console.log(numberOfDays);
     return numberOfDays;
   }
 
-  getSolarPlant(planet) {
-    for (let i = 0; i < this.allThePlanets.length; i++) {
-      if (this.allThePlanets[i] === planet) {
-        return planet;
-      }
-    }
+  getSolarPlant() {
+    new Array(
+      "earth",
+      "mercury",
+      "venus",
+      "mars",
+      "jupiter"
+    );
   }
 
 }

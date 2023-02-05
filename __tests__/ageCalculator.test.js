@@ -28,8 +28,15 @@ describe('Age', () => {
   });
 
   test('should return a solar planet', () => {
-    let solarPlanet = userAge.getSolarPlant('mercury');
-    expect(userAge.getSolarPlant(solarPlanet)).toEqual('mercury');
+    let solarPlanet = userAge.getSolarPlant();
+    expect(solarPlanet).toEqual('earth');
   });
+
+
+
+
+
+
+
 
 });
