@@ -8,7 +8,7 @@ describe('Age', () => {
 
   beforeEach(() => {
     userAge = new Age();
-    userAge.userDateOfBirth = new Date('January 01, 1967');
+    userAge.userDateOfBirth = new Date('January 01, 2010');
     pastBirthday = new Age();
     pastBirthday.userDateOfBirth = new Date('January 01, 1980');
 
@@ -58,22 +58,33 @@ describe('Age', () => {
     expect(userAge.calculatorAgeInSolarYears(jupiter, userAge)).toEqual(jupiterYears);
   });
 
-    test('should show users age in years for each planet', () => {
-    expect(userAge.calculatorAgeInSolarYears(earth, userAge)).toEqual(56);
+  test('should show users age in years for each planet', () => {
+    expect(userAge.calculatorAgeInSolarYears(earth, userAge)).toEqual(earthYears);
+    expect(userAge.calculatorAgeInSolarYears(mercury, userAge)).toEqual(mercuryYears);
+    expect(userAge.calculatorAgeInSolarYears(venus, userAge)).toEqual(venusYears);
+    expect(userAge.calculatorAgeInSolarYears(mars, userAge)).toEqual(marsYears);
+    expect(userAge.calculatorAgeInSolarYears(jupiter, userAge)).toEqual(jupiterYears);
     console.log(earthYears + " in " + earth + " years ");
-    // expect(userAge.calculatorAgeInSolarYears(mercury, userAge)).toEqual(mercuryYears);
-    // expect(userAge.calculatorAgeInSolarYears(venus, userAge)).toEqual(venusYears);
-    // expect(userAge.calculatorAgeInSolarYears(mars, userAge)).toEqual(marsYears);
-    // expect(userAge.calculatorAgeInSolarYears(jupiter, userAge)).toEqual(jupiterYears);
+    console.log(mercuryYears + " in " + mercury + " years ");
+    console.log(venusYears + " in " + venus + " years ");
+    console.log(marsYears + " in " + mars + " years ");
+    console.log(jupiterYears + " in " + jupiter + " years ");
+
   });
 
   test('should return years since user past birthday', () => {
     expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(years);
   });
 
-  test('should show the years that have pass since user past birthday', () => { 
+  test('should show the years that have pass since user past birthday', () => {
     expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(13);
-    console.log(years);   
+    console.log(years);
+  });
+
+    test('should show the years that have pass since last birthday on all planets', () => {
+    let yearsResults = userAge.calculatorAgeInSolarYears(earth, years);
+    expect(yearsResults).toEqual(13);
+    console.log("it's been " + yearsResults + " " + earth + " years since your last birthday");
   });
 
 
