@@ -19,7 +19,7 @@ export class Age {
     };
     for (let element in daysInYear) {
       if (element === planet) {
-        return numberOfDays / daysInYear[element];
+        numberOfDays / daysInYear[element];
       }
     }
   }
@@ -43,4 +43,25 @@ export class Age {
   getSolarPlant() {
     return new Array("earth", "mercury", "venus", "mars", "jupiter");
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

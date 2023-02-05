@@ -6,8 +6,8 @@ describe('Age', () => {
 
   beforeEach(() => {
     userAge = new Age('July 14, 1984 01:01:01');
-     solarPlanet = userAge.getSolarPlant();
-    
+    solarPlanet = userAge.getSolarPlant();
+
     earth = solarPlanet[0];
     mercury = solarPlanet[1];
     venus = solarPlanet[2];
@@ -38,6 +38,11 @@ describe('Age', () => {
 
   test('should return a solar planet', () => {
     expect(solarPlanet[0]).toEqual(earth);
+  });
+
+  test('should return the users age in years for each planet', () => {
+    let earthYears = userAge.calculatorAgeInSolarYears(earth,userAge);
+    expect(earthYears).toEqual('157.68');
   });
 
 
