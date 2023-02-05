@@ -21,10 +21,7 @@ export class Age {
 
     for (let element in daysInYear) {
       if (element === planet) {
-
-        total = numberOfDays / daysInYear[element];
-        return total;
-        
+        return numberOfDays / daysInYear[element];     
       }
     }
   }
