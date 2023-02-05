@@ -1,15 +1,15 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userDob;
+  let userAge;
 
   beforeEach(() => {
-    userDob = new Age('July 14, 1984 01:01:01');
+    userAge = new Age('July 14, 1984 01:01:01');
   });
 
   test('should show the user date of birth', () => {
-    expect(userDob.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
-    console.log(userDob);
+    expect(userAge.userDateOfBirth).toEqual('July 14, 1984 01:01:01');
+    console.log(userAge);
   });
 
 
