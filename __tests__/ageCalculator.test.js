@@ -2,7 +2,7 @@ import { Age } from './../src/age.js';
 
 describe('Age', () => {
   let userAge, earth, mercury, venus, mars, jupiter;
-  let earthYears;
+  let earthYears,mercuryYears,venusYears,marsYears,jupiterYears; 
   let solarPlanet;
 
   beforeEach(() => {
@@ -15,6 +15,10 @@ describe('Age', () => {
     jupiter = solarPlanet[4];
     
     earthYears = userAge.calculatorAgeInSolarYears(earth,userAge);
+    mercuryYears = userAge.calculatorAgeInSolarYears(mercury,userAge);
+    venusYears = userAge.calculatorAgeInSolarYears(venus,userAge);
+    marsYears = userAge.calculatorAgeInSolarYears(mars,userAge);
+    jupiterYears = userAge.calculatorAgeInSolarYears(jupiter,userAge);
 
   });
 
@@ -44,6 +48,10 @@ describe('Age', () => {
 
   test('should return the users age in years for each planet', () => {
     expect(userAge.calculatorAgeInSolarYears(earth,userAge)).toEqual(earthYears);
+    expect(userAge.calculatorAgeInSolarYears(mercury,userAge)).toEqual(mercuryYears);
+    expect(userAge.calculatorAgeInSolarYears(venus,userAge)).toEqual(venusYears);
+    expect(userAge.calculatorAgeInSolarYears(mars,userAge)).toEqual(marsYears);
+    expect(userAge.calculatorAgeInSolarYears(jupiter,userAge)).toEqual(jupiterYears);
   });
 
 
