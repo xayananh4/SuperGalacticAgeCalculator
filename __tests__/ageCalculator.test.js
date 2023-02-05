@@ -84,7 +84,7 @@ describe('Age', () => {
     test('should show the years that have pass since last birthday on all planets', () => {
     let yearsResults = userAge.calculatorAgeInSolarYears(earth, years);
     expect(yearsResults).toEqual(13);
-    console.log("it's been " + yearsResults + " " + earth + " years since your last birthday");
+    console.log("It's been " + yearsResults + " " + earth + " years since your last birthday");
   });
 
 

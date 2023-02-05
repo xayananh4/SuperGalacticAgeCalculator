@@ -49,12 +49,12 @@ export class Age {
 
     for (let element in daysInYear) {
       if (element === planet) {
-         numberOfDays / daysInYear[element];
+        return numberOfDays / daysInYear[element];
       }
     }
   }
 
-    calculatorYearsSinceLastBirthdayAllOnThePlanets(planet, age) {
+  calculatorYearsSinceLastBirthdayAllOnThePlanets(planet, age) {
     let diff = Math.abs(userAge - pastBirthday);
     let day = 1000 * 60 * 60 * 24;
     let days = Math.floor(diff / day);
