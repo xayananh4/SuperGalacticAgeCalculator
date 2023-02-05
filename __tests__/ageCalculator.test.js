@@ -60,7 +60,7 @@ describe('Age', () => {
 
     test('should show users age in years for each planet', () => {
     expect(userAge.calculatorAgeInSolarYears(earth, userAge)).toEqual(56);
-    console.log(earthYears);
+    console.log(earthYears + " in " + earth + " years ");
     // expect(userAge.calculatorAgeInSolarYears(mercury, userAge)).toEqual(mercuryYears);
     // expect(userAge.calculatorAgeInSolarYears(venus, userAge)).toEqual(venusYears);
     // expect(userAge.calculatorAgeInSolarYears(mars, userAge)).toEqual(marsYears);

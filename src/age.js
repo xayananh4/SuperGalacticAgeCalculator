@@ -23,11 +23,10 @@ export class Age {
       if (element === planet) {
 
         total = numberOfDays / daysInYear[element];
-        total;
+        return total;
         
       }
     }
-    console.log(total);
   }
 
   getUserAgeInYears(userDateOfBirth) {
