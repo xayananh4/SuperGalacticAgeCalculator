@@ -1,8 +1,6 @@
 export class Age {
   constructor(dateOfBirth) {
     this.userDateOfBirth = dateOfBirth;
-    this.allThePlanets = [];
-
   }
 
   calculatorAgeInSolarYears(planet, age) {
@@ -10,6 +8,7 @@ export class Age {
     let numberOfDays;
 
     numberOfDays = this.convertAgeToDays(age);
+
     daysInYear = {
       "earth": 365,
       "mercury": 88,
@@ -17,6 +16,7 @@ export class Age {
       "mars": 687,
       "jupiter": 4332
     };
+
     for (let element in daysInYear) {
       if (element === planet) {
         return numberOfDays / daysInYear[element];
@@ -44,23 +44,9 @@ export class Age {
     return new Array("earth", "mercury", "venus", "mars", "jupiter");
   }
 
+  calculatorYearsSinceLastBirthday(pastBirthday, userDob) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
 
 
 
