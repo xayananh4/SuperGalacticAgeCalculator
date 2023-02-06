@@ -41,7 +41,7 @@ export class Age {
 
     daysInYear = {
       "earth": 365,
-      "mercury": 88,
+      "mercury": 88.0,
       "venus": 224,
       "mars": 687,
       "jupiter": 4332
@@ -54,12 +54,5 @@ export class Age {
     }
   }
 
-  calculatorYearsSinceLastBirthdayAllOnThePlanets(planet, age) {
-    let diff = Math.abs(userAge - pastBirthday);
-    let day = 1000 * 60 * 60 * 24;
-    let days = Math.floor(diff / day);
-    let months = Math.floor(days / 31);
-    let years = Math.ceil(months / 12);
-    return years;
-  }
+
 }

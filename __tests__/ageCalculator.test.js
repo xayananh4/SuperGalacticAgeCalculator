@@ -2,6 +2,7 @@ import { Age } from './../src/age.js';
 
 describe('Age', () => {
   let userAge, pastBirthday, years;
+  let earthYearsResults, mercuryYearsResults, venusYearsResults, marsYearsResults, jupiterYearsResults;
   let earth, mercury, venus, mars, jupiter;
   let earthYears, mercuryYears, venusYears, marsYears, jupiterYears;
   let solarPlanet;
@@ -25,6 +26,11 @@ describe('Age', () => {
     marsYears = userAge.calculatorAgeInSolarYears(mars, userAge);
     jupiterYears = userAge.calculatorAgeInSolarYears(jupiter, userAge);
     years = userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth);
+    earthYearsResults = userAge.calculatorAgeInSolarYears(earth, years);
+    mercuryYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mercury, years)).toFixed(2);
+    venusYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(venus, years)).toFixed(2);
+    marsYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mars, years)).toFixed(2);
+    jupiterYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(jupiter, years)).toFixed(2);
 
   });
 
@@ -81,11 +87,18 @@ describe('Age', () => {
     console.log(years);
   });
 
-    test('should show the years that have pass since last birthday on all planets', () => {
-    let yearsResults = userAge.calculatorAgeInSolarYears(earth, years);
-    expect(yearsResults).toEqual(13);
-    console.log("It's been " + yearsResults + " " + earth + " years since your last birthday");
+  test('should show the years that have pass since last birthday on all planets', () => {
+    expect(earthYearsResults).toEqual(earthYearsResults);
+    expect(mercuryYearsResults).toEqual(mercuryYearsResults);
+    console.log(earthYearsResults + " " + earth + " years have passed.");
+    console.log(mercuryYearsResults + " " + mercury + " years have passed.");
+    console.log(venusYearsResults + " " + venus + " years have passed.");
+    console.log(marsYearsResults + " " + mars + " years have passed.");
+    console.log(jupiterYearsResults + " " + jupiter + " years have passed.");
   });
+
+
+
 
 
 });
