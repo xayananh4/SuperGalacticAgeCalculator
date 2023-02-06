@@ -6,13 +6,13 @@ export class Age {
   getUserAgeInYears(userDateOfBirth) {
     let today = new Date();
     let birthDate = this.userDateOfBirth;
-    let age = today.getFullYear() - birthDate.getFullYear();
+    let userAge = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
-    
+
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+      userAge--;
     }
-    return age;
+    return userAge;
   }
 
   getSolarPlant() {
@@ -37,28 +37,28 @@ export class Age {
   calculatorYearUntilFutureBirthday(futureDate, userDob) {
     let userCurrentAge = this.getUserAgeInYears(userDob);
     let futureBirthdayAge = futureDate.getFullYear() - userDob.getFullYear();
-    futureBirthdayAge - userCurrentAge;
+    return futureBirthdayAge - userCurrentAge;
   }
 
+  calculatorAgeInSolarYears(planet, userAge) {
+    let allThePlanets;
+    let result;
+    let _userAge = this.getUserAgeInYears(userAge);
 
-  calculatorAgeInSolarYears(planet, age) {
-    let daysInYear;
-    let numberOfDays;
-
-    numberOfDays = this.convertAgeToDays(age);
-
-    daysInYear = {
-      "earth": 365,
-      "mercury": 88.0,
-      "venus": 224,
-      "mars": 687,
-      "jupiter": 4332
+    allThePlanets = {
+      "earth": 1,
+      "mercury": 0.24,
+      "venus": 0.62,
+      "mars": 1.88,
+      "jupiter": 11.86
     };
 
-    for (let element in daysInYear) {
+    for (let element in allThePlanets) {
       if (element === planet) {
-        return numberOfDays / daysInYear[element];
+        result = _userAge / allThePlanets[element];
+        result;
       }
+
     }
   }
 }
