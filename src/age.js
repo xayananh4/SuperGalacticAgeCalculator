@@ -8,6 +8,7 @@ export class Age {
     let birthDate = this.userDateOfBirth;
     let age = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
+    
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
@@ -33,11 +34,12 @@ export class Age {
 
   }
 
-  calculatorAgeDiffUntilNextBirthday(futureBirthday, userDob) {
-    let _futureBirthday = this.getUserAgeInYears(futureBirthday);
-    let _currentAge = this.getUserAgeInYears(userDob);
-    _futureBirthday - _currentAge;
+  calculatorYearUntilFutureBirthday(futureDate, userDob) {
+    let userCurrentAge = this.getUserAgeInYears(userDob);
+    let futureBirthdayAge = futureDate.getFullYear() - userDob.getFullYear();
+    futureBirthdayAge - userCurrentAge;
   }
+
 
   calculatorAgeInSolarYears(planet, age) {
     let daysInYear;
