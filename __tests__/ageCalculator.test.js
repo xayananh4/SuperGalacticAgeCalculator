@@ -57,16 +57,9 @@ describe('Age', () => {
   });
 
   test('should return the users age in years for each planet', () => {
-    earthYears = userAge.calculatorAgeInSolarYears(earth, userAge.userDateOfBirth);
-    mercuryYears = userAge.calculatorAgeInSolarYears(mercury, userAge.userDateOfBirth);
-    venusYears = userAge.calculatorAgeInSolarYears(venus, userAge.userDateOfBirth);
-    marsYears = userAge.calculatorAgeInSolarYears(mars, userAge.userDateOfBirth);
-    jupiterYears = userAge.calculatorAgeInSolarYears(jupiter, userAge);
-    expect(userAge.calculatorAgeInSolarYears(earth, userAge)).toEqual(earthYears);
-    expect(userAge.calculatorAgeInSolarYears(mercury, userAge)).toEqual(mercuryYears);
-    expect(userAge.calculatorAgeInSolarYears(venus, userAge)).toEqual(venusYears);
-    expect(userAge.calculatorAgeInSolarYears(mars, userAge)).toEqual(marsYears);
-    expect(userAge.calculatorAgeInSolarYears(jupiter, userAge)).toEqual(jupiterYears);
+
+    expect(userAge.calculatorAgeInSolarYears(earth,userAge.userDateOfBirth)).toEqual(56);
+ 
   });
 
   
