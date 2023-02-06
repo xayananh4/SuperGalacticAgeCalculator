@@ -1,5 +1,4 @@
 export class Age {
-
   constructor() {
     this.userDateOfBirth = new Date();
   }
@@ -31,6 +30,13 @@ export class Age {
     let months = Math.floor(days / 31);
     let years = Math.ceil(months / 12);
     return years;
+
+  }
+
+  calculatorAgeDiffUntilNextBirthday(futureBirthday, userDob) {
+    let _futureBirthday = this.getUserAgeInYears(futureBirthday);
+    let _currentAge = this.getUserAgeInYears(userDob);
+    _futureBirthday - _currentAge;
   }
 
   calculatorAgeInSolarYears(planet, age) {
@@ -53,6 +59,4 @@ export class Age {
       }
     }
   }
-
-
 }

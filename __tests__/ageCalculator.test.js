@@ -1,7 +1,7 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userAge, pastBirthday, years;
+  let userAge, pastBirthday, years, futureBirthday, futureYears;
   let earthYearsResults, mercuryYearsResults, venusYearsResults, marsYearsResults, jupiterYearsResults;
   let earth, mercury, venus, mars, jupiter;
   let earthYears, mercuryYears, venusYears, marsYears, jupiterYears;
@@ -9,9 +9,11 @@ describe('Age', () => {
 
   beforeEach(() => {
     userAge = new Age();
-    userAge.userDateOfBirth = new Date('January 01, 2010');
+    userAge.userDateOfBirth = new Date('January 01, 1967');
     pastBirthday = new Age();
     pastBirthday.userDateOfBirth = new Date('January 01, 1980');
+    futureBirthday = new Age();
+    futureBirthday.userDateOfBirth = new Date('January 01, 2028');
 
     solarPlanet = userAge.getSolarPlant();
     earth = solarPlanet[0];
@@ -27,10 +29,15 @@ describe('Age', () => {
     jupiterYears = userAge.calculatorAgeInSolarYears(jupiter, userAge);
     years = userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth);
     earthYearsResults = userAge.calculatorAgeInSolarYears(earth, years);
+    
     mercuryYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mercury, years)).toFixed(2);
     venusYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(venus, years)).toFixed(2);
     marsYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mars, years)).toFixed(2);
     jupiterYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(jupiter, years)).toFixed(2);
+
+   futureYears = userAge.calculatorAgeDiffUntilNextBirthday(userAge.futureBirthday,userAge.userDateOfBirth);
+
+  
 
   });
 
@@ -95,6 +102,12 @@ describe('Age', () => {
     console.log(venusYearsResults + " " + venus + " years have passed.");
     console.log(marsYearsResults + " " + mars + " years have passed.");
     console.log(jupiterYearsResults + " " + jupiter + " years have passed.");
+  });
+
+  test('should show the years until user future birthday', () => {
+    expect(futureYears).toEqual(5);
+    console.log(futureYears  + " " + earth + " years have yet to pass.");
+
   });
 
 
