@@ -56,7 +56,7 @@ export class Age {
     for (let element in allThePlanets) {
       if (element === planet) {
         result = _userAge / allThePlanets[element];
-        result;
+        return result;
       }
 
     }
