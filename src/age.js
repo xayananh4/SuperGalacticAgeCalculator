@@ -30,8 +30,9 @@ export class Age {
     let days = Math.floor(diff / day);
     let months = Math.floor(days / 31);
     let years = Math.ceil(months / 12);
+    console.log(years);
     return years;
-
+  
   }
 
   calculatorYearUntilFutureBirthday(futureDate, userDob) {
@@ -41,13 +42,17 @@ export class Age {
   }
 
   calculatorAgeInSolarYears(planet, userAge) {
+    
+    
+    
     let allThePlanets;
     let result;
     let _userAge = this.getUserAgeInYears(userAge);
+   
 
     allThePlanets = {
       "earth": 1,
-      "mercury": 0.24,
+      "mercury": 0.241,
       "venus": 0.62,
       "mars": 1.88,
       "jupiter": 11.86
@@ -56,7 +61,8 @@ export class Age {
     for (let element in allThePlanets) {
       if (element === planet) {
         result = _userAge / allThePlanets[element];
-        return result;
+        console.log(result);
+  
       }
 
     }
