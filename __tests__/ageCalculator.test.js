@@ -94,7 +94,7 @@ describe('Age', () => {
     // venusYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(venus, years)).toFixed(2);
     // marsYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mars, years)).toFixed(2);
     // jupiterYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(jupiter, years)).toFixed(2);
-    // expect(earthYearsResults).toEqual(earthYearsResults);
+    expect(earthYearsResults).toEqual(13);
     // expect(mercuryYearsResults).toEqual(mercuryYearsResults);
     // expect(venusYearsResults).toEqual(venusYearsResults);
     // expect(marsYearsResults).toEqual(marsYearsResults);

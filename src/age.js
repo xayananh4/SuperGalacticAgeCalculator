@@ -35,7 +35,7 @@ export class Age {
 
     let years = Math.ceil(months / 12);
   
-    return years;
+    years;
   }
 
   calculatorYearUntilFutureBirthday(futureDate, userDob) {
