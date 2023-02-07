@@ -89,7 +89,7 @@ describe('Age', () => {
   
   //Prompt To Show Years That Have Pass Since Last Birthday 
   test('should show the years that have pass since last birthday on all planets', () => { 
-    earthYearsResults = userAge.calculatorAgeInSolarYears(earth, years);
+    earthYearsResults = userAge.calculatorYearsSinceLastBirthday(earth, years);
     // mercuryYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mercury, years)).toFixed(2);
     // venusYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(venus, years)).toFixed(2);
     // marsYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mars, years)).toFixed(2);
