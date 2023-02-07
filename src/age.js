@@ -31,6 +31,7 @@ export class Age {
     let days = Math.floor(diff / day);
     let months = Math.floor(days / 31);
     let years = Math.ceil(months / 12);
+    console.log(years);
 
     let allThePlanets = {
       "earth": 1,
@@ -43,7 +44,8 @@ export class Age {
     for (let element in allThePlanets) {
       if (element === planet) {
         result = years / allThePlanets[element];
-        result;
+
+        return result;
       }
     }
   }
