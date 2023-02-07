@@ -90,20 +90,20 @@ describe('Age', () => {
   //Prompt To Show Years That Have Pass Since Last Birthday 
   test('should show the years that have pass since last birthday on all planets', () => { 
     earthYearsResults = userAge.calculatorYearsSinceLastBirthday(earth, pastBirthday.userDateOfBirth);
-    // mercuryYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mercury, years)).toFixed(2);
-    // venusYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(venus, years)).toFixed(2);
-    // marsYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mars, years)).toFixed(2);
-    // jupiterYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(jupiter, years)).toFixed(2);
+    mercuryYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mercury,pastBirthday.userDateOfBirth)).toFixed(2);
+    venusYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(venus,pastBirthday.userDateOfBirth)).toFixed(2);
+    marsYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mars,pastBirthday.userDateOfBirth)).toFixed(2);
+    jupiterYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(jupiter,pastBirthday.userDateOfBirth)).toFixed(2);
     expect(earthYearsResults).toEqual(13);
-    // expect(mercuryYearsResults).toEqual(mercuryYearsResults);
-    // expect(venusYearsResults).toEqual(venusYearsResults);
-    // expect(marsYearsResults).toEqual(marsYearsResults);
-    // expect(jupiterYearsResults).toEqual(jupiterYearsResults);
+    expect(mercuryYearsResults).toEqual(mercuryYearsResults);
+    expect(venusYearsResults).toEqual(venusYearsResults);
+    expect(marsYearsResults).toEqual(marsYearsResults);
+    expect(jupiterYearsResults).toEqual(jupiterYearsResults);
     console.log(earthYearsResults + " " + earth + " years have passed.");
-    // console.log(mercuryYearsResults + " " + mercury + " years have passed.");
-    // console.log(venusYearsResults + " " + venus + " years have passed.");
-    // console.log(marsYearsResults + " " + mars + " years have passed.");
-    // console.log(jupiterYearsResults + " " + jupiter + " years have passed.");
+    console.log(mercuryYearsResults + " " + mercury + " years have passed.");
+    console.log(venusYearsResults + " " + venus + " years have passed.");
+    console.log(marsYearsResults + " " + mars + " years have passed.");
+    console.log(jupiterYearsResults + " " + jupiter + " years have passed.");
   });
 
   test('should show the years until user future birthday', () => {
