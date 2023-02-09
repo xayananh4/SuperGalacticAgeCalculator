@@ -1,6 +1,8 @@
 export class Age {
   constructor() {
     this.userDateOfBirth = new Date();
+    this.FutureBirthday = new Date();
+
     this.allThePlanets = {
       "earth": 1,
       "mercury": 0.241,
@@ -12,11 +14,11 @@ export class Age {
 
   getUserAgeInYears() {
     let today = new Date();
-    let _userDateOfBirth = this.userDateOfBirth; 
-    
+    let _userDateOfBirth = this.userDateOfBirth;
+
     let userAge = today.getFullYear() - _userDateOfBirth.getFullYear();
     let m = today.getMonth() - _userDateOfBirth.getMonth();
-    
+
     if (m < 0 || (m === 0 && today.getDate() < _userDateOfBirth.getDate())) {
       userAge--;
     }
@@ -31,7 +33,7 @@ export class Age {
     let numberOfDays = this.getUserAgeInYears(userDateOfBirth) * 365;
     return numberOfDays;
   }
-  
+
   calculatorYearsSinceLastBirthday(planet, pastBirthday) {
     const userAge = Date.now();
     let diff = Math.abs(userAge - pastBirthday);
@@ -47,26 +49,25 @@ export class Age {
     }
   }
 
-  calculatorYearUntilFutureBirthday(futureDate, userDob) {
-    let userCurrentAge = this.getUserAgeInYears(userDob);
-    let futureBirthdayAge = futureDate.getFullYear() - userDob.getFullYear();
-    return futureBirthdayAge - userCurrentAge;
-  }
-
   calculatorAgeInSolarYears(planet) {
     //convert the userbirthday into age number
     let _userAge = this.getUserAgeInYears();
-    let allThePlanets = {
-      "earth": 1,
-      "mercury": 0.241,
-      "venus": 0.62,
-      "mars": 1.88,
-      "jupiter": 11.86
-    };
-
-    for (let element in allThePlanets) {
+    for (let element in this.allThePlanets) {
       if (element === planet) {
-        return _userAge / allThePlanets[element];
+        return _userAge / this.allThePlanets[element];
+      }
+    }
+  }
+
+  calculatorYearsForFutureBirthday(planet, futureDate, userDob) {
+    let _userAge;
+    let userCurrentAge = this.getUserAgeInYears(userDob);
+    let futureBirthdayAge = futureDate.getFullYear() - userDob.getFullYear();
+    _userAge = futureBirthdayAge - userCurrentAge;
+    
+    for (let element in this.allThePlanets) {
+      if (element === planet) {
+        return _userAge / this.allThePlanets[element];
       }
     }
   }

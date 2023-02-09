@@ -1,7 +1,7 @@
 import { Age } from './../src/age.js';
 
 describe('Age', () => {
-  let userAge, pastBirthday, years, futureBirthday, futureYears, futureDate;
+  let userAge, pastBirthday, years, futBirth, futureYears;
   let earthYearsResults, mercuryYearsResults, venusYearsResults, marsYearsResults, jupiterYearsResults;
   let earth, mercury, venus, mars, jupiter;
   let earthYears, mercuryYears, venusYears, marsYears, jupiterYears;
@@ -10,12 +10,12 @@ describe('Age', () => {
   beforeEach(() => {
     userAge = new Age();
     userAge.userDateOfBirth = new Date('January 01, 1967');
-    
+
     pastBirthday = new Age();
     pastBirthday.userDateOfBirth = new Date('January 01, 2010');
-    
-    futureBirthday = new Age();
-    futureDate = new Date(futureBirthday.userDateOfBirth.setFullYear(2028,1,1));
+
+    futBirth = new Age();
+    futBirth.FutureBirthday.setFullYear(2028, 1, 1);
 
     solarPlanet = userAge.getSolarPlant();
     earth = solarPlanet[0];
@@ -24,7 +24,6 @@ describe('Age', () => {
     mars = solarPlanet[3];
     jupiter = solarPlanet[4];
 
-    // years = userAge.calculatorYearsSinceLastBirthday(pastBirthday.userDateOfBirth);
   });
 
   test('should show the user date of birth', () => {
@@ -60,11 +59,11 @@ describe('Age', () => {
     expect(venusYearsResults).toEqual("90.32");
     expect(marsYearsResults).toEqual("29.79");
     expect(jupiterYearsResults).toEqual("4.72");
- 
+
   });
 
-  
-  //Prompt To Display All Ages For Each Planet 
+
+  //Prompt FOR: Show All The Years For User On ALL The Planets 
   test('should show users age in years for each planet', () => {
     earthYears = userAge.calculatorAgeInSolarYears(earth);
     mercuryYears = userAge.calculatorAgeInSolarYears(mercury);
@@ -86,14 +85,14 @@ describe('Age', () => {
     expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(13);
     console.log(years);
   });
-  
-  //Prompt To Show Years That Have Pass Since Last Birthday 
-  test('should show the years that have pass since last birthday on all planets', () => { 
+
+  //Prompt FOR: Show The Years That Have Pass Since Last Birthday 
+  test('should show the years that have pass since last birthday on all planets', () => {
     earthYearsResults = userAge.calculatorYearsSinceLastBirthday(earth, pastBirthday.userDateOfBirth);
-    mercuryYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mercury,pastBirthday.userDateOfBirth)).toFixed(2);
-    venusYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(venus,pastBirthday.userDateOfBirth)).toFixed(2);
-    marsYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mars,pastBirthday.userDateOfBirth)).toFixed(2);
-    jupiterYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(jupiter,pastBirthday.userDateOfBirth)).toFixed(2);
+    mercuryYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mercury, pastBirthday.userDateOfBirth)).toFixed(2);
+    venusYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(venus, pastBirthday.userDateOfBirth)).toFixed(2);
+    marsYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(mars, pastBirthday.userDateOfBirth)).toFixed(2);
+    jupiterYearsResults = parseFloat(userAge.calculatorYearsSinceLastBirthday(jupiter, pastBirthday.userDateOfBirth)).toFixed(2);
     expect(earthYearsResults).toEqual(13);
     expect(mercuryYearsResults).toEqual(mercuryYearsResults);
     expect(venusYearsResults).toEqual(venusYearsResults);
@@ -106,11 +105,12 @@ describe('Age', () => {
     console.log(jupiterYearsResults + " " + jupiter + " years have passed.");
   });
 
+  //Prompt FOR: Show The Years Until Future Birthday 
   test('should show the years until user future birthday', () => {
-    expect(futureYears = userAge.calculatorYearUntilFutureBirthday(futureDate,userAge.userDateOfBirth)).toEqual(5);
-    _mercuryYearsResults = parseFloat(userAge.calculatorAgeInSolarYears(mercury, futureYears)).toFixed(2);
-    console.log(futureYears  + " " + earth + " years have yet to pass.");
-    console.log(_mercuryYearsResults  + " " + mercury + " years have yet to pass.");
+    expect(futureYears = userAge.calculatorYearsForFutureBirthday(earth,futBirth.FutureBirthday,userAge.userDateOfBirth)).toEqual(5);
+    // _mercuryYearsResults = parseFloat(userAge.calculatorYearsForFutureBirthday(mercury, futureYears)).toFixed(2);
+    console.log(futureYears + " " + earth + " years have yet to pass.");
+    console.log(_mercuryYearsResults + " " + mercury + " years have yet to pass.");
 
   });
 });
