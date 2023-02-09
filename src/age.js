@@ -68,6 +68,7 @@ export class Age {
     for (let element in this.allThePlanets) {
       if (element === planet) {
         return _userAge / this.allThePlanets[element];
+        
       }
     }
   }

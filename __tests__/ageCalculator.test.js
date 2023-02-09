@@ -108,7 +108,8 @@ describe('Age', () => {
   //Prompt FOR: Show The Years Until Future Birthday 
   test('should show the years until user future birthday', () => {
     expect(futureYears = userAge.calculatorYearsForFutureBirthday(earth,futBirth.FutureBirthday,userAge.userDateOfBirth)).toEqual(5);
-    // _mercuryYearsResults = parseFloat(userAge.calculatorYearsForFutureBirthday(mercury, futureYears)).toFixed(2);
+    expect(_mercuryYearsResults = userAge.calculatorYearsForFutureBirthday(mercury,futBirth.FutureBirthday,userAge.userDateOfBirth)).toEqual(20.74688796680498);
+
     console.log(futureYears + " " + earth + " years have yet to pass.");
     console.log(_mercuryYearsResults + " " + mercury + " years have yet to pass.");
 
