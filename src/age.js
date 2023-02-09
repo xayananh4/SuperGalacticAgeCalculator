@@ -1,15 +1,23 @@
 export class Age {
   constructor() {
     this.userDateOfBirth = new Date();
+    this.allThePlanets = {
+      "earth": 1,
+      "mercury": 0.241,
+      "venus": 0.62,
+      "mars": 1.88,
+      "jupiter": 11.86
+    };
   }
 
-  getUserAgeInYears(userDateOfBirth) {
+  getUserAgeInYears() {
     let today = new Date();
-    let birthDate = this.userDateOfBirth;
-    let userAge = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
-
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    let _userDateOfBirth = this.userDateOfBirth; 
+    
+    let userAge = today.getFullYear() - _userDateOfBirth.getFullYear();
+    let m = today.getMonth() - _userDateOfBirth.getMonth();
+    
+    if (m < 0 || (m === 0 && today.getDate() < _userDateOfBirth.getDate())) {
       userAge--;
     }
     return userAge;
@@ -23,29 +31,18 @@ export class Age {
     let numberOfDays = this.getUserAgeInYears(userDateOfBirth) * 365;
     return numberOfDays;
   }
+  
   calculatorYearsSinceLastBirthday(planet, pastBirthday) {
-    let result;
     const userAge = Date.now();
     let diff = Math.abs(userAge - pastBirthday);
     let day = 1000 * 60 * 60 * 24;
     let days = Math.floor(diff / day);
     let months = Math.floor(days / 31);
     let years = Math.ceil(months / 12);
-    console.log(years);
 
-    let allThePlanets = {
-      "earth": 1,
-      "mercury": 0.241,
-      "venus": 0.62,
-      "mars": 1.88,
-      "jupiter": 11.86
-    };
-
-    for (let element in allThePlanets) {
+    for (let element in this.allThePlanets) {
       if (element === planet) {
-        result = years / allThePlanets[element];
-
-        return result;
+        return years / this.allThePlanets[element];
       }
     }
   }
@@ -56,10 +53,9 @@ export class Age {
     return futureBirthdayAge - userCurrentAge;
   }
 
-  calculatorAgeInSolarYears(planet, userAge) {
-    let result;
+  calculatorAgeInSolarYears(planet) {
     //convert the userbirthday into age number
-    let _userAge = this.getUserAgeInYears(userAge);
+    let _userAge = this.getUserAgeInYears();
     let allThePlanets = {
       "earth": 1,
       "mercury": 0.241,
@@ -70,10 +66,8 @@ export class Age {
 
     for (let element in allThePlanets) {
       if (element === planet) {
-        result = _userAge / allThePlanets[element];
-        return result;
+        return _userAge / allThePlanets[element];
       }
-
     }
   }
 }

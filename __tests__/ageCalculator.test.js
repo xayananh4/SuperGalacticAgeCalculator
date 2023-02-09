@@ -66,11 +66,11 @@ describe('Age', () => {
   
   //Prompt To Display All Ages For Each Planet 
   test('should show users age in years for each planet', () => {
-    earthYears = userAge.calculatorAgeInSolarYears(earth, userAge.userDateOfBirth);
-    mercuryYears = userAge.calculatorAgeInSolarYears(mercury, userAge.userDateOfBirth);
-    venusYears = userAge.calculatorAgeInSolarYears(venus, userAge.userDateOfBirth);
-    marsYears = userAge.calculatorAgeInSolarYears(mars, userAge.userDateOfBirth);
-    jupiterYears = userAge.calculatorAgeInSolarYears(jupiter, userAge);
+    earthYears = userAge.calculatorAgeInSolarYears(earth);
+    mercuryYears = userAge.calculatorAgeInSolarYears(mercury);
+    venusYears = userAge.calculatorAgeInSolarYears(venus);
+    marsYears = userAge.calculatorAgeInSolarYears(mars);
+    jupiterYears = userAge.calculatorAgeInSolarYears(jupiter);
     console.log(earthYears + " in " + earth + " years ");
     console.log(mercuryYears + " in " + mercury + " years ");
     console.log(venusYears + " in " + venus + " years ");
