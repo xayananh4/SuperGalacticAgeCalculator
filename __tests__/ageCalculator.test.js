@@ -82,7 +82,7 @@ describe('Age', () => {
   });
 
   test('should show the years that have pass since user past birthday', () => {
-    expect(userAge.calculatorYearsSinceLastBirthday(userAge.userDateOfBirth, pastBirthday.userDateOfBirth)).toEqual(13);
+    expect(userAge.calculatorYearsSinceLastBirthday(earth, pastBirthday.userDateOfBirth)).toEqual(13);
     console.log(years);
   });
 
